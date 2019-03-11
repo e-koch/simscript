@@ -37,10 +37,10 @@ print(command)
 result = subprocess.call(command, shell=True)
 print(result)
 print(D['FileName'])
-save_name = os.path.join(outdir, D['FileName'] + '_radmc.fits')
+save_name = os.path.join(targetdir, D['FileName'] + '_radmc.fits')
 
 pp.MakeFits(fitsfile=save_name, dpc=260.0, toK=True)
 
-shutil.move(save_name, outdir)
-os.chdir(outdir)
+shutil.move(save_name, targetdir)
+os.chdir(targetdir)
 # shutil.rmtree(D['TempDir'])
